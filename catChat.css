@@ -1,0 +1,150 @@
+/* CSS declarations go here */
+
+html, body, header, h1, section, ul, li, div, a, form, footer {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font: inherit;
+  font-family: 'Lato', sans-serif;
+  vertical-align: baseline;
+}
+
+body {
+  background: #EEE5B8;
+}
+
+a {
+  text-decoration: none;
+}
+
+input[type="text"] {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font: inherit;
+}
+
+input[type="submit"] {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font: inherit;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+  margin: 5px 0 20px 0;
+}
+
+header {
+  padding: 0px 10px;
+  position: absolute;
+  right: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+section.chat-room {
+  width: 800px;
+  padding: 8px;
+  margin: auto;
+  border: 2px solid grey;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 3px 3px 3px #999;
+}
+
+ul#chats {
+  height: 400px;
+  overflow: auto;
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  border-radius: 8px;
+  box-shadow: 1px 1px 1px #999;
+}
+
+li.chat {
+  font-size: 20px;
+  padding: 3px 5px;
+}
+
+li.chat > .username {
+  float: left;
+  width: 140px;
+  font-weight: bold;
+  height: 25px;
+}
+
+li.chat > .message {
+  float: right;
+  width: 630px;
+}
+
+form.new-message {
+  border: 1px solid grey;
+  box-shadow: 2px 2px 2px #999;
+}
+
+input#message {
+  font-size: 20px;
+  padding: 5px;
+  width: 708px;
+  border-right: 1px solid grey;
+}
+
+input#submit-message {
+  width: 73px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+input#username {
+  width: 120px;
+  display: block;
+  margin-bottom: 6px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 3px;
+}
+
+.logged-in {
+  margin-bottom: 9px;
+}
+
+input#submit-username, .reset-username {
+  float: right;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 2px 8px;
+  background: #F1922E;
+  color: white;
+  cursor: pointer;
+}
+
+input#submit-username:hover, .reset-username:hover {
+  background: #FFB55A;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  font-size: 14px;
+}
+
+footer > div {
+  text-align: right;
+}

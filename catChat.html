@@ -1,0 +1,49 @@
+<head>
+  <title>catChat</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  {{> chatRoom}}
+  <footer>
+    <div>Created by <a href="http://sweeneysam.com">Sam Sweeney</a></div>
+    <div>View source code <a href="http://www.github.com/shubik22/catchat">here</a></div>
+  </footer>
+</body>
+
+<template name="chatRoom">
+  <header>
+    {{#if username}}
+        <div class="logged-in">Chatting as {{username}}</div>
+        <div class="reset-username">Change Name</div>
+    {{else}}
+        <form id="username">
+          <input type="text" id="username">
+          <input type="submit" id="submit-username" value="Set Name">
+        </form>
+    {{/if}}
+  </header>
+  <h1>CatChat</h1>
+  <section class="chat-room">
+    <ul id="chats">
+      {{#each chats}}
+        {{> chat}}
+      {{/each}}
+    </ul>
+    {{> newMessage}}
+  </section>
+</template>
+
+<template name="chat">
+  <li class="chat group">
+    <div class="username">{{username}}:</div>
+    <div class="message">{{message}}</div>
+  </li>
+</template>
+
+<template name="newMessage">
+  <form class="new-message group">
+    <input type="text" id="message">
+    <input type="submit" id="submit-message" value="Send">
+  </form>
+</template>
