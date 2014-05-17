@@ -74,20 +74,20 @@ ul#chats {
 }
 
 li.chat {
-  font-size: 20px;
-  padding: 3px 5px;
+  font-size: 18px;
+  padding: 2px 5px;
 }
 
 li.chat > .username {
   float: left;
-  width: 140px;
+  width: 125px;
   font-weight: bold;
   height: 25px;
 }
 
 li.chat > .message {
   float: right;
-  width: 630px;
+  width: 650px;
 }
 
 form.new-message {
