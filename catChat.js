@@ -10,12 +10,17 @@ if (Meteor.isClient) {
     });
     Session.set("user_id", user_id);
     Session.set("logged_in", Date.now());
-    Session.setDefault("username", "AnonCat");
+    Session.setDefault("resetName", "");
     
     Meteor.setInterval(function() {
       Users.update(Session.get("user_id"), {$set: {ping_time: Date.now()}});
     }, 5000);
   });
+
+  var username = function() {
+    var user = Users.findOne(Session.get("user_id"));
+    return user && user.username;
+  };
 
   Template.user.selected = function() {
     return (this._id === Session.get("user_id")) ? "selected" : "";
@@ -35,16 +40,16 @@ if (Meteor.isClient) {
       
       var username = $("input#username").val();
       Users.update(Session.get("user_id"), {$set: {username: username}});
-      Session.set("username", username);
+      Session.set("changeName", "");
     },
     
     "click .reset-username": function(event) {
       event.preventDefault();
       
-      Session.set("username", "");
+      Session.set("changeName", "true");
     }
   });
-  
+
   Template.chatRoom.users = function() {
     return Users.find();
   };
@@ -52,24 +57,26 @@ if (Meteor.isClient) {
   Template.chatRoom.chats = function() {
     return Chats.find({time_created: {$gt: Session.get("logged_in")}});
   };
-  
-  Template.chatRoom.username = function() {
-    return Session.get("username");
+
+  Template.chatRoom.changeName = function() {
+    return Session.get("changeName");
   };
   
-  Template.chatRoom.oldUsername = function() {
-    var user = Users.findOne(Session.get("user_id"));
-    return user && user.username;
+  Template.chatRoom.username = function() {
+    return username();
   };
   
   Template.chat.rendered = function() {
     var $chats = $("ul#chats");
-    var $lastChat = $("ul#chats>li.chat:last-child");
-    if ($lastChat && $lastChat.position()) {
-      $chats.scrollTop($lastChat.position().top + $lastChat.height());
-    }
+    var scrollPos = 0;
+
+    $chats.find("li").each(function() {
+      scrollPos += $(this).height();
+    })
+
+    $chats.scrollTop(scrollPos);
   };
-  
+
   Template.newMessage.events({
     "submit form.new-message": function(event) {
       event.preventDefault();
@@ -77,7 +84,7 @@ if (Meteor.isClient) {
       var $message = $("input#message");
       Chats.insert({
         message: $message.val(),
-        username: Session.get("username"),
+        username: username(),
         time_created: Date.now()
       });
       Users.update(Session.get("user_id"), {$set: {last_action: Date.now()}})

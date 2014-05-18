@@ -45,13 +45,23 @@ input[type="submit"] {
 
 h1 {
   font-size: 60px;
-  margin: 5px 0 20px 0;
+  margin: 5px 0;
   line-height: 73px;
   float: right;
 }
 
 h2 {
   font-size: 18px;
+  text-align: center;
+}
+
+h2#slogan {
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+h2 > a {
+  color: black;
 }
 
 img.logo {

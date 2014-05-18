@@ -1,5 +1,6 @@
 <head>
-  <title>catChat</title>
+  <title>CatChat</title>
+  <link rel="shortcut icon" type="image/x-icon" href="black_cat.png" />
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 </head>
 
@@ -13,20 +14,25 @@
 
 <template name="chatRoom">
   <header>
-    {{#if username}}
+    {{#if changeName}}
+      <form id="username">
+        <input type="text" id="username" value="{{oldUsername}}">
+        <input type="submit" id="submit-username" value="Set name">
+      </form>
+    {{else}}
         <div class="logged-in">Chatting as {{username}}</div>
         <div class="reset-username">Change Name</div>
-    {{else}}
-        <form id="username">
-          <input type="text" id="username" value="{{oldUsername}}">
-          <input type="submit" id="submit-username" value="Set name">
-        </form>
     {{/if}}
   </header>
   <div class="site-title group">
     <img src="black_cat.png" class="logo" alt="cat">
     <h1>CatChat</h1>
   </div>
+  <h2 id="slogan">
+    <a href="http://en.wikipedia.org/wiki/On_the_Internet,_nobody_knows_you're_a_dog">
+    On the internet, nobody knows you're a cat
+  </a>
+  </h2>
   <section class="chat-content group">
     <div class="users-list">
       <h2>Chatting Cats</h2>
