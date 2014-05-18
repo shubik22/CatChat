@@ -1,6 +1,6 @@
 #CatChat
 
-CatChat is a lightweight chat room for cats built with Meteor (a space ripe for disruption).  A few features worth pointing out:
+CatChat is a lightweight chat room for cats built with Meteor (a space ripe for disruption).  It's hosted at [catchat.meteor.com](http://catchat.meteor.com).  A few features worth pointing out:
 
 * The chat room autoscrolls to the bottom each time a chat is added.
 * Active users automatically ping the server every five seconds.  The server maintains a list of current users by removing users who haven't pinged within a certain period of time.
