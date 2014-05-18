@@ -39,7 +39,10 @@ if (Meteor.isClient) {
       event.preventDefault();
       
       var username = $("input#username").val();
-      Users.update(Session.get("user_id"), {$set: {username: username}});
+      Users.update(Session.get("user_id"), {$set: {
+        username: username,
+        last_action: Date.now()
+      }});
       Session.set("changeName", "");
     },
     
