@@ -18,20 +18,40 @@
         <div class="reset-username">Change Name</div>
     {{else}}
         <form id="username">
-          <input type="text" id="username">
-          <input type="submit" id="submit-username" value="Set Name">
+          <input type="text" id="username" value="{{oldUsername}}">
+          <input type="submit" id="submit-username" value="Set name">
         </form>
     {{/if}}
   </header>
-  <h1>CatChat</h1>
-  <section class="chat-room">
-    <ul id="chats">
-      {{#each chats}}
-        {{> chat}}
-      {{/each}}
-    </ul>
-    {{> newMessage}}
+  <div class="site-title group">
+    <img src="black_cat.png" class="logo" alt="cat">
+    <h1>CatChat</h1>
+  </div>
+  <section class="chat-content group">
+    <div class="users-list">
+      <h2>Chatting Cats</h2>
+      <ul>
+        {{#each users}}
+          {{> user}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="chat-room">
+      <ul id="chats">
+        {{#each chats}}
+          {{> chat}}
+        {{/each}}
+      </ul>
+      {{> newMessage}}
+    </div>
   </section>
+</template>
+
+<template name="user">
+  <li class="user {{selected}}">
+    <img src="{{catIcon}}" class="status-icon">
+    <span class="username">{{username}}</span>
+  </li>
 </template>
 
 <template name="chat">

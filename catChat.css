@@ -1,6 +1,6 @@
 /* CSS declarations go here */
 
-html, body, header, h1, section, ul, li, div, a, form, footer {
+html, body, header, h1, h2, section, ul, li, div, a, form, footer {
   padding: 0;
   margin: 0;
   border: 0;
@@ -38,14 +38,31 @@ input[type="submit"] {
   display: block;
 }
 
+.site-title {
+  margin: auto;
+  width: 290px;
+}
+
 h1 {
   font-size: 60px;
-  text-align: center;
   margin: 5px 0 20px 0;
+  line-height: 73px;
+  float: right;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+img.logo {
+  float: left;
+  height: 62px;
+  width: auto;
+  padding-top: 12px;
 }
 
 header {
-  padding: 0px 10px;
+  padding: 10px;
   position: absolute;
   right: 0;
 }
@@ -54,14 +71,57 @@ ul {
   list-style: none;
 }
 
-section.chat-room {
-  width: 800px;
+.chat-content {
+  width: 1000px;
   padding: 8px;
   margin: auto;
   border: 2px solid grey;
   border-radius: 8px;
   background: white;
   box-shadow: 3px 3px 3px #999;
+}
+
+.users-list {
+  float: left;
+  width: 190px;
+  border: 1px solid grey;
+  border-radius: 8px;
+  height: 446px;
+}
+
+.users-list > h2 {
+  text-align: center;
+  border-bottom: 1px solid grey;
+}
+
+.users-list > ul {
+  padding: 4px;
+  overflow: auto;
+}
+
+img.status-icon {
+  height: 18px;
+  width: auto;
+  padding-top: 2px;
+}
+
+.users-list li {
+  margin-bottom: 2px;
+}
+
+.users-list .username {
+  vertical-align: top;
+  padding-bottom: 8px;
+}
+
+.users-list li.selected {
+  font-weight: bold;
+}
+
+.chat-room {
+  float: right;
+  width: 800px;
+  background: white;
 }
 
 ul#chats {
@@ -119,15 +179,15 @@ input#username {
 }
 
 .logged-in {
-  margin-bottom: 9px;
+  margin-bottom: 6px;
 }
 
 input#submit-username, .reset-username {
   float: right;
-  border: 1px solid black;
+  border: 1px solid #999;
   border-radius: 5px;
   font-size: 14px;
-  padding: 2px 8px;
+  padding: 2px 6px 3px 6px;
   background: #F1922E;
   color: white;
   cursor: pointer;
