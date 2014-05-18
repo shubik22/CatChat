@@ -85,8 +85,10 @@ if (Meteor.isClient) {
       event.preventDefault();
       
       var $message = $("input#message");
+      var message = ($message.val() === "") ? "meow" : $message.val();
+      
       Chats.insert({
-        message: $message.val(),
+        message: message,
         username: username(),
         time_created: Date.now()
       });
