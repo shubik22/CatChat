@@ -98,6 +98,7 @@ ul {
   box-shadow: 1px 1px 1px #999;
   border-radius: 8px;
   height: 446px;
+  background: rgba(238, 229, 184, 0.5);
 }
 
 .users-list > h2 {
