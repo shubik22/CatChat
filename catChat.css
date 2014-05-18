@@ -107,6 +107,7 @@ img.status-icon {
 
 .users-list li {
   margin-bottom: 2px;
+  overflow: hidden;
 }
 
 .users-list .username {
@@ -140,14 +141,16 @@ li.chat {
 
 li.chat > .username {
   float: left;
-  width: 125px;
+  width: 120px;
+  margin-right: 5px;
   font-weight: bold;
   height: 25px;
+  overflow: hidden;
 }
 
 li.chat > .message {
   float: right;
-  width: 650px;
+  width: 645px;
 }
 
 form.new-message {

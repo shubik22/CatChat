@@ -66,7 +66,7 @@ if (Meteor.isClient) {
     var $chats = $("ul#chats");
     var $lastChat = $("ul#chats>li.chat:last-child");
     if ($lastChat && $lastChat.position()) {
-      $chats.scrollTop($lastChat.position().top);
+      $chats.scrollTop($lastChat.position().top + $lastChat.height());
     }
   };
   
