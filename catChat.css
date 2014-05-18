@@ -85,7 +85,7 @@ ul {
   width: 1000px;
   padding: 8px;
   margin: auto;
-  border: 2px solid grey;
+  border: 1px solid grey;
   border-radius: 8px;
   background: white;
   box-shadow: 3px 3px 3px #999;
@@ -95,6 +95,7 @@ ul {
   float: left;
   width: 190px;
   border: 1px solid grey;
+  box-shadow: 1px 1px 1px #999;
   border-radius: 8px;
   height: 446px;
 }
