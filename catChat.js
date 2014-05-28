@@ -71,15 +71,10 @@ if (Meteor.isClient) {
   
   Template.chat.rendered = function() {
     var $chats = $("ul#chats");
-    var scrollPos = 0;
 
-    $chats.find("li").each(function() {
-      scrollPos += $(this).height();
-    })
-
-    $chats.scrollTop(scrollPos);
+    $chats.scrollTop($chats[0].scrollHeight);
   };
-
+  
   Template.newMessage.events({
     "submit form.new-message": function(event) {
       event.preventDefault();

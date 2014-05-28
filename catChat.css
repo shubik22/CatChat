@@ -213,10 +213,10 @@ input#submit-username:hover, .reset-username:hover {
 }
 
 footer {
-  position: absolute;
+  display: block;
   bottom: 0;
   right: 0;
-  margin: 10px;
+  margin: 40px 10px 10px 10px;
   font-size: 14px;
 }
 
